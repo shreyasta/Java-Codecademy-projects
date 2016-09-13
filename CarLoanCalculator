@@ -1,0 +1,33 @@
+//Loan calculator
+
+
+public class CarLoan {
+	public static void main(String[] args) {
+// create an int variable carLoan and assign a value 10000
+    int carLoan = 10000;
+   //Create an int variable loanLength and assign a value of 3 years
+    int loanLength = 3;
+// create an int variable interestRest and assign a value 5 to it.
+    int interestRate = 5;
+  //create an int variable downPayment and assign a value 2000 to it.  
+    int downPayment = 2000;
+
+    // an if statement that would prevent a buyer from taking out an invalid car loan
+    
+    if( (loanLength<=0 ) || (interestRate<=0)) {
+      
+      System.out.println("Error! You must take out a valid car loan");
+      
+    }else if (downPayment >= carLoan){
+     
+      System.out.println("The car can be paid in full.");
+      
+    }else{
+      // calculating the monthly payment
+      int remainingBalance = carLoan - downPayment;
+      int months = loanLength *12;   // monthly payment 
+      int monthlyBalance = remainingBalance/months; //represents monthly balance w/o interest 
+      int interest = ((monthlyBalance * interestRate)/100); // calculate the interest 
+      int monthlyPayment =  monthlyBalance + interest;// monthly Payment to be paid by the customer
+      System.out.println("monthlyPayment to be paid =" + monthlyPayment);
+    }
