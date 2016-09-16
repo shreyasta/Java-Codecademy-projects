@@ -1,0 +1,81 @@
+import java.util.ArrayList;
+//Create a class gradeAnalyzer
+public class GradeAnalyzer{
+//Creating GradeAnalyzer constructor
+  public GradeAnalyzer(){
+    
+  }
+  //Creating a method for lowest grade
+ public int lowestGrade(ArrayList<Integer> grades)	{    
+ if(grades.size() < 1){
+ System.out.println("Error : The grades list is empty ");
+  }
+   else {
+     int min= grades.get(0);  
+     for(int lowgrade : grades){// comparing the 0th position with all the values in the list
+       if(lowgrade < min)
+         min = lowgrade;
+     }
+      System.out.println("Lowest grade: " + min);
+  }
+   return 0;
+} 
+  // Creating a method for highest grade
+  
+ public int highestGrade(ArrayList<Integer> grades)	{
+       
+ if(grades.size() < 1){
+ System.out.println("Error : The grades list is empty ");
+  }
+  else{
+     int max= grades.get(0);  
+     for(int highgrade : grades){// comparing the 0th position with all the values in the list
+       if(highgrade> max)
+         max = highgrade;
+     } 
+    System.out.println("Highest grade: " + max );
+  }
+   return 0;
+ }  
+  
+  
+  
+  // Creating a method getAverage
+  public int getAverage(ArrayList<Integer> grades){
+
+   // ArrayList called grades that holds integers
+ // ArrayList<Integer> grades = new  ArrayList<Integer> ();
+     
+ if(grades.size() < 1){
+ System.out.println("Error : The grades list is empty ");
+  }
+   else {
+      int sum = 0;// create sum first b4 calculating averageSum
+   for(int grade:grades) {// for each block used in calculating sum
+      sum  += grade;
+       }
+       int average = sum/grades.size();  // to calculate the avg of grades
+       System.out.println(" The average of the grades = " + average);
+       return average;
+     }
+    return 0;
+  }
+   public static void main(String[] args){
+     ArrayList<Integer> myClassroom = new  ArrayList<Integer> (); // this arraylist is used to store integers
+     myClassroom.add(98); // adding the grades
+     myClassroom.add(92);
+     myClassroom.add(88);
+     myClassroom.add(75);
+     myClassroom.add(61);
+     myClassroom.add(89);
+     myClassroom.add(95);
+     GradeAnalyzer myAnalyzer = new GradeAnalyzer(); // Creating GradeAnalyzer object myAnalyzer
+       
+     myAnalyzer.getAverage(myClassroom); // Calling the method getAverage on object myAnalyzer and passing the argument myClassroom
+      myAnalyzer.lowestGrade(myClassroom);
+      myAnalyzer.highestGrade(myClassroom);
+   }
+  
+  
+  
+}
