@@ -1,0 +1,39 @@
+//  a simple Library tool to help analyze completed books in a small, personal library. The tool will print out the books that a user has fully read. 
+
+
+import java.util.HashMap;
+
+public class Library{ // Creating class library
+  
+  
+  public Library(){ // creating a constructor
+    
+  }
+  
+  public void getFinishedBooks(HashMap<String, Boolean> library){ //method HashMap to store string and boolean
+    if(library.size() < 1) {
+      System.out.println("Error : the HashMap is empty");
+    }else{
+      for(String book : library.keySet()){ // for each loop iterates through each book in the key set of library. 
+    if (library.get(book) == true){ // if statement that checks to see if the value associated with each book in library is equal to true.
+         System.out.println(book);  // print the book
+        }
+      }
+    }
+  }
+    
+ 	public static void main(String[] args) { 
+      HashMap<String, Boolean> myBooks = new   HashMap<String, Boolean>(); // creating hashmap object myBooks
+      myBooks.put("Road Down The Funnel", true); // adding book and its status
+      myBooks.put("Rat: A Biology", false);
+      myBooks.put("TimeIn", true);
+    myBooks.put("3D Food Printing ", false);
+    
+    Library myLibrary = new Library();// create object mylibrary
+    myLibrary.getFinishedBooks(myBooks);// pass the parameter mylibrary
+    
+    }
+    
+    
+    
+}
