@@ -1,0 +1,59 @@
+public class Droid{
+  
+int batteryLevel;  // intance variable
+  
+  public Droid() { // creating constructor Droid
+    batteryLevel = 100; // setting it to 100 %
+  }
+  // create method activate  
+  public void activate(){
+    
+    System.out.println("Activated. How can I help you?"); // The droid is activated
+   
+    batteryLevel = batteryLevel - 5; // Battery level decreased by 5%
+    
+    System.out.println(" Battery level is: " + batteryLevel + " percent. "); // Prints the current battery level
+ 
+  }
+    //Create a method chargeBattery 
+  public void chargeBattery(int hours){
+    
+    System.out.println("Droid charging...");// Print Droid charging
+    
+    batteryLevel = batteryLevel + hours; // increasing batery level
+   
+    if(batteryLevel >100) {      // checking if battery is overcharged
+      batteryLevel = 100;       // Setting the battery level to 100
+System.out.println(" Battery level is: " + batteryLevel + " percent. ");//prints battery level
+    						}
+    else{
+      System.out.println(" Battery level is: " + batteryLevel + " percent. ");
+    		
+    			}
+   }
+  
+  // Create a method checkBatteryLevel
+    public int checkBatteryLevel(){
+System.out.println(" Battery level is: " + batteryLevel + " percent. ");// Prints Battery level
+      return batteryLevel; // returns the int value of batteryvalue
+    }
+   // Create a method called hover
+  public void hover(int feet){
+    if (feet >2 ){
+      System.out.println(" Error! I cannot hover above 2 feet. ");
+    } else{
+      System.out.println("Hovering...");
+      batteryLevel = batteryLevel - 20; //Battery level is deceased by 20 %
+       System.out.println("Battery level is: " + batteryLevel + " percent. " ); // prints the current battery level
+    }
+  }
+  
+  public static void main (String[] args){
+    Droid droid = new Droid();// creating droid object
+    droid.activate();// calling method activate
+    droid.chargeBattery(5); // calling chargeBattery
+    droid.hover(1); // caling hover
+    
+  }
+  
+}
